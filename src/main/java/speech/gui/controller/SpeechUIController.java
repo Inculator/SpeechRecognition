@@ -1,6 +1,7 @@
 package speech.gui.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.text.Text;
 import speechrecognition.SpeechInitializer;
@@ -22,4 +23,5 @@ public class SpeechUIController {
 			listnenerState.setText("I have stopped Listening.");
 		}
 	}
+	
 }

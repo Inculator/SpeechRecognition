@@ -14,13 +14,13 @@ import speech.gui.controller.DecisionController;
 public class SpeechInitializer {
 
 	private static Logger logger = Logger.getLogger("HelloWorld");
-	private static Runnable speechRunnable;
-	private static Thread speechThread;
-	private static Thread resourcesThread;
 	private static SpeechInitializer speechInitializer;
-	private static LiveSpeechRecognizer recognizer;
-	private static Configuration configuration;
-	private static boolean waitFlag = true;
+
+	private Thread speechThread;
+	private Thread resourcesThread;
+	private LiveSpeechRecognizer recognizer;
+	private Configuration configuration;
+	private boolean waitFlag = true;
 
 	private SpeechInitializer() {
 		configuration = new Configuration();
@@ -34,6 +34,7 @@ public class SpeechInitializer {
 			recognizer = new LiveSpeechRecognizer(configuration);
 			recognizer.startRecognition(true);
 		} catch (IOException e) {
+			logger.log(Level.INFO, "Microphone is not available. Please setup Microphone and try again. \n");
 		}
 		startResourcesThread();
 	}
@@ -48,7 +49,7 @@ public class SpeechInitializer {
 		if (speechThread != null && speechThread.isAlive())
 			return;
 
-		speechRunnable = () -> {
+		Runnable speechRunnable = () -> {
 			waitFlag = true;
 			while (waitFlag)
 				if (waitFlag)
@@ -64,7 +65,7 @@ public class SpeechInitializer {
 			waitFlag = false;
 	}
 
-	public static void startResourcesThread() {
+	public void startResourcesThread() {
 		if (resourcesThread != null && resourcesThread.isAlive())
 			return;
 		resourcesThread = new Thread(() -> {

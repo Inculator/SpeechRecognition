@@ -38,6 +38,7 @@ public class HelloWorld extends ResultAdapter {
 			startSpeechThread(recognizer);
 			startResourcesThread();
 		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 	}
