@@ -21,17 +21,16 @@ public class SpeechGUI extends Application {
 			stage.setScene(scene);
 			stage.setTitle("Browser Speech Controller by Mohak Gupta");
 			stage.showAndWait();
-			stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-				public void handle(WindowEvent event) {
-					try {
-						stop();
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-			});
+			stage.setOnCloseRequest((event) ->stopApp());
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+	}
+
+	private void stopApp() {
+		try {
+			stop();
+		} catch (Exception e) {
 		}
 	}
 

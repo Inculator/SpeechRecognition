@@ -1,9 +1,11 @@
 package speech.gui.controller;
 
+import com.mg.speechFacade.SpeechFacade;
+
 public class DecisionController {
 
 	public static void decisionMaker(String result) {
 		System.out.println(result);
-		String[] array = result.split(" ");
+		new SpeechFacade().controllerForSpeechCommand(result);
 	}
 }

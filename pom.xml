@@ -3,9 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mg</groupId>
 	<artifactId>speechrecognition</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>speechrecognition Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -32,8 +31,10 @@
 			<artifactId>sphinx4-data</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+		<dependency>
+			<groupId>SpeechFacade</groupId>
+			<artifactId>com.mg.speechFacade</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
-	<build>
-		<finalName>speechrecognition</finalName>
-	</build>
 </project>
