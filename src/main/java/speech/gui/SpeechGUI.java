@@ -1,13 +1,11 @@
 package speech.gui;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 public class SpeechGUI extends Application {
 
@@ -21,16 +19,8 @@ public class SpeechGUI extends Application {
 			stage.setScene(scene);
 			stage.setTitle("Browser Speech Controller by Mohak Gupta");
 			stage.showAndWait();
-			stage.setOnCloseRequest((event) ->stopApp());
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-	}
-
-	private void stopApp() {
-		try {
-			stop();
-		} catch (Exception e) {
 		}
 	}
 

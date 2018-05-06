@@ -6,10 +6,8 @@ public <sentence> = hello world | good morning |
 public <number> = (one | two | three | four | five);
 public <action> = (plus | minus | terminate);
 public <final> = (show result);
+							
+							
+public <browser> = (browse) (google | g mail | yahoo);
 
-public <calculator> = (one | two | three | four | five)
-							(plus)
-							(one | two | three | four | five);
-							
-							
-public <browser> = (browser);
+public <calculator> = (launch) (t) (tool);
